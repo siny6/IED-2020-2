@@ -13,24 +13,27 @@ void setup() {
 }
 
 void loop() {
-  //Serial.println(++count);
 
-  if (t < 1)
-  {
+  if(t <= 1){
     digitalWrite(PIN_LED, 0);
     delay(1000);
     t = t + 1;
     }
 
-  for(int c = 0; c < 5; c++)
-  {
-    toggle = toggle_state(toggle); // toggle LED value.
-    digitalWrite(PIN_LED, toggle); // update LED status.
-    delay(100); // wait for 100 milliseconds
-    t = t + 1;
+  if(t > 1){
+    while(b){
+      Serial.println(t);
+      toggle = toggle_state(toggle);
+      digitalWrite(PIN_LED, toggle);
+      delay(100);
+      t = t + 1;
+      if(t > 12){
+        b = 0;
+        }
+      }
     }
-   
-  if (t >= 10){
+
+  if (t > 10){
     digitalWrite(PIN_LED, 1);
     while(1){} // infinite loop
     }
