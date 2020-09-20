@@ -17,7 +17,7 @@ void loop() {
 
   if(t <= 1){
     digitalWrite(PIN_LED, 0);
-    delay(1000);
+    delay(250);
     t = t + 1;
     }
 
