@@ -1,5 +1,5 @@
 #define PIN_LED 7
-unsigned int count, toggle, t;
+unsigned int count, toggle, t, b;
 
 void setup() {
   pinMode(PIN_LED, OUTPUT);
@@ -9,6 +9,7 @@ void setup() {
   }
   Serial.println("Hello World!");
   count = toggle = t = 0;
+  b = 1;
   digitalWrite(PIN_LED, toggle); // turn off LED.
 }
 
