@@ -75,8 +75,6 @@ void loop() {
 
   // add your code here!
   
-  myservo.writeMicroseconds(_DUTY_MIN*(dist_ema/100));
-  
   if(dist_raw >= 358){
     myservo.writeMicroseconds(_DUTY_MAX);
     analogWrite(PIN_LED, 255);
@@ -87,11 +85,8 @@ void loop() {
     }
   else{
     analogWrite(PIN_LED, 0);
-    //myservo.writeMicroseconds(355*(dist_ema/60));
+    myservo.writeMicroseconds(355*(dist_ema/100));
   }
-    
-    //myservo.writeMicroseconds(_DUTY_MIN*(dist_ema/10));
-    //analogWrite(PIN_LED, 0);
   
    
 // update last sampling time
